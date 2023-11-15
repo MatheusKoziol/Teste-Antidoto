@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Cores : MonoBehaviour
 {
+    //Enum para guardar quais cores existem na roleta
     public enum CorSelecionada
     {
         azul,

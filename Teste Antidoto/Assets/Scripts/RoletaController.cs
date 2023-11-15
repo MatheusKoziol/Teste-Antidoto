@@ -21,12 +21,6 @@ public class RoletaController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R)) 
-        {
-            IniciarGiro();
-        }
-
-
         if (girando)
         {
             //ativa a seta ao girar

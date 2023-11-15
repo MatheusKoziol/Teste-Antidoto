@@ -47,6 +47,7 @@ public class SetaController : MonoBehaviour
 
     }
 
+    //Exibe a mensagem de vitória ou derrota após a roleta parar de girar
     private void ExibirMensagem()
     {
 
@@ -65,31 +66,27 @@ public class SetaController : MonoBehaviour
         }
     }
 
+    //Verifica com qual cor a seta está colidindo
     private void OnTriggerStay2D(Collider2D collision)
     {
-        if (!roletaController.girando)
-            return;
+        if (!roletaController.girando) return;
 
-        if (collision.CompareTag("ParteAmarela"))
+        switch (collision.tag)
         {
-            cor = CorSelecionada.amarelo;
-        }
-        else if (collision.CompareTag("ParteAzul"))
-        {
-            cor = CorSelecionada.azul;
-        }
-        else if (collision.CompareTag("ParteVerde"))
-        {
-            cor = CorSelecionada.verde;
-        }
-        else if (collision.CompareTag("ParteVermelha"))
-        {
-            cor = CorSelecionada.vermelho;
+            case "ParteAmarela":
+                cor = CorSelecionada.amarelo;
+                break;
+            case "ParteAzul":
+                cor = CorSelecionada.azul;
+                break;
+            case "ParteVerde":
+                cor = CorSelecionada.verde;
+                break;
+            case "ParteVermelha":
+                cor = CorSelecionada.vermelho;
+                break;
         }
     }
 
-    public void GirouPrimeiraVez()
-    {
-        primeiraVez = false;
-    }
+    public void GirouPrimeiraVez() => primeiraVez = false;
 }
